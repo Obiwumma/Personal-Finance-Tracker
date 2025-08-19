@@ -3,7 +3,8 @@ import './App.css'
 
 import { transactions } from './data/transactions'
 
-import Category from './components/category'
+import Category from './components/Category'
+import ThemeIcons from './components/ThemeIcon'
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -31,9 +32,13 @@ function App() {
   return (
     <>
     <div className='m-4 p-4 bg-[#b0b4b9] flex-col items-center justify-center h-svh font-sans rounded-lg '>
-      <header>
-        <h1 className=' font-semibold text-3xl'>Finance Tracker</h1>
-        <div className='my-4'><p className='text-2xl font-semibold '>$2,000.00</p></div>
+      <header className='flex items-start justify-between'>
+        <div>
+          <h1 className=' font-semibold text-3xl'>Finance Tracker</h1>
+          <div className='my-4'><p className='text-2xl font-semibold '>$2,000.00</p></div>
+        </div>
+
+        <ThemeIcons/>
       </header>
 
       <div className='flex items-center justify-center'>
