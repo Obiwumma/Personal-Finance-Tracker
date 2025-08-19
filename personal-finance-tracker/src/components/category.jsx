@@ -23,7 +23,7 @@ function Category() {
   // }
 
   return <>
-    <div className="flex gap-4 bg-[#ffffff] border rounded-lg w-[80%] p-2 md:w-[50%]  ">
+    <div className="flex gap-4 bg-[#ffffff] border rounded-lg p-2 overflow-auto md:w-[50%] md:items-center md:justify-evenly ">
         <button className="category-btn">All</button>
         <button className="category-btn">Expenses</button>
         <button className="category-btn">Income</button>
