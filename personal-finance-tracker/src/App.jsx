@@ -4,7 +4,6 @@ import './App.css'
 import { transactions } from './data/transactions'
 
 import Category from './components/category'
-import LargerCategory from './components/largerCategory'
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -38,7 +37,7 @@ function App() {
       </header>
 
       <div className='flex items-center justify-center'>
-        {isMobile ? <Category/> : <LargerCategory/>}
+        <Category/> 
       </div>
 
       <main>
