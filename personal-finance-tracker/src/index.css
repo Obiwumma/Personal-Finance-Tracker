@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
-/* div{
-  color: #5e5858;
-} */
+diva{
+  color: #4d4c4c;
+}
+
+.category-btn{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; 
+  padding-left: 1rem;
+  padding-right: 1rem; 
+  border-radius: 0.25rem; 
+  font-weight: 600; 
+  color: #717171; 
+  background: #eeeeee;
+}

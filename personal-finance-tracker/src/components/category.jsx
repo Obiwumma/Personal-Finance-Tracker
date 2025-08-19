@@ -24,7 +24,7 @@ function Category() {
   }
 
   return <>
-    <div className="relative bg-white border rounded-lg md:w-[50%] ">
+    <div className="relative bg-white border rounded-lg w-[80%]  md:w-[50%]  ">
         {/* <!-- Fake select button --> */}
         <button onClick={handleCategory} class=" w-full px-4 py-2 bg-[#b0b4b9] border rounded">
           {selected}

@@ -1,12 +1,32 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 import { transactions } from './data/transactions'
 
 import Category from './components/category'
+import LargerCategory from './components/largerCategory'
 
 function App() {
-  
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)'); // Example breakpoint
+
+    const handleMediaQueryChange = (e) => {
+      setIsMobile(e.matches);
+    };
+
+    // Initial check
+    setIsMobile(mediaQuery.matches);
+
+    // Listen for changes
+    mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    // Cleanup listener on unmount
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange);
+    };
+  }, []);
 
 
   return (
@@ -18,7 +38,7 @@ function App() {
       </header>
 
       <div className='flex items-center justify-center'>
-        <Category/>
+        {isMobile ? <Category/> : <LargerCategory/>}
       </div>
 
       <main>
