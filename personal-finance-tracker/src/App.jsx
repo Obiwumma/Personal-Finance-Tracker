@@ -5,13 +5,18 @@ import { transactions } from './data/transactions'
 
 import Category from './components/Category'
 import ThemeIcons from './components/ThemeIcon'
-
+import Modal from './components/Modal'
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false)
 
+  function closeModal() {
+    setIsOpen(false)
+  }
 
   return (
     <>
+    <Modal isOpen={isOpen} onClose={closeModal} />
     <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg '>
       <header className='flex items-start justify-between'>
         <div>
@@ -52,7 +57,7 @@ function App() {
         </div>
       </main>
 
-      <button className='bg-green-600 hover:bg-green-700 h-16 w-16 fixed bottom-6 right-6 rounded-full flex items-center justify-center text-5xl text-white shadow-lg transition'> + </button>
+      <button className='bg-green-600 hover:bg-green-700 h-16 w-16 fixed bottom-6 right-6 rounded-full flex items-center justify-center text-5xl text-white shadow-lg transition' onClick={() => setIsOpen(true)} > + </button>
 
     </div>
     </>
