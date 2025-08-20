@@ -6,6 +6,7 @@ import { transactions } from './data/transactions'
 import Category from './components/Category'
 import ThemeIcons from './components/ThemeIcon'
 
+
 function App() {
 
 
