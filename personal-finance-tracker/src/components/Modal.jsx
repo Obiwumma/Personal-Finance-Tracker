@@ -1,4 +1,5 @@
 import { createPortal } from "react-dom";
+import TransactionForm from "./TransactionForm"
 
 function Modal({ isOpen, onClose, children }) {
   const modalRoot = document.getElementById("modal-root");
@@ -13,6 +14,9 @@ function Modal({ isOpen, onClose, children }) {
         {children}
 
         <button className="w-20" onClick={onClose}>CLOSE</button>
+
+        <TransactionForm/>
+
       </div>
     </div>,
     modalRoot
