@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-import { transactions } from './data/transactions'
+// import { transactions } from './data/transactions'
+
+import { useTransactionStore } from './store/transactionStore'
 
 import Category from './components/Category'
 import ThemeIcons from './components/ThemeIcon'
@@ -9,6 +11,8 @@ import Modal from './components/Modal'
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
+
+  const transactions = useTransactionStore((state) => state.transactions)
 
   function closeModal() {
     setIsOpen(false)

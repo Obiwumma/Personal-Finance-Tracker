@@ -1,15 +1,22 @@
 import { useState } from "react";
 import { useForm } from 'react-hook-form';
 
+import { useTransactionStore } from "../store/transactionStore";
+
 function TransactionForm() {
 
       const { register, handleSubmit, formState: { errors }, reset } = useForm();
+      const addTransaction = useTransactionStore((state) => state.addTransaction)
+
 
 
 
   const onHandleSubmit = (data) => {
         console.log(data)
-        console.log(errors)
+        addTransaction({
+      ...data,
+      id: Date.now(), 
+    });
         reset();
       };
   

@@ -1,6 +1,6 @@
 import { create } from "zustand"
 
-const useTransactionStore = create((set) => ({
+export const useTransactionStore = create((set) => ({
   //State
   transactions: [],
 
@@ -21,3 +21,4 @@ const useTransactionStore = create((set) => ({
 
 
 }))
+
