@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useTransactionStore } from "../store/transactionStore";
 
 function Category() {
-  const [selected, setSelected] = useState('All')
+  const {  setFilterCategory } = useTransactionStore()
 
   // function handleCategory() {
   //   setDropdown(!dropdown)
@@ -24,9 +25,9 @@ function Category() {
 
   return <>
     <div className="flex gap-4 bg-[#ffffff] border rounded-lg p-2 overflow-auto md:w-[50%] md:items-center md:justify-evenly ">
-        <button className="category-btn">All</button>
-        <button className="category-btn">Expenses</button>
-        <button className="category-btn">Income</button>
+        <button className="category-btn" onClick={() => setFilterCategory("all")}>All</button>
+        <button className="category-btn" onClick={() => setFilterCategory("Income")}>Expenses</button>
+        <button className="category-btn" onClick={() => setFilterCategory("Expenses")}>Income</button>
       </div>
   </>
 }

@@ -2,7 +2,20 @@ import { useTransactionStore } from "../store/transactionStore";
 
 function TransactionList() {
   const transactions = useTransactionStore((state) => state.transactions)
-  
+  const { filteredTransactions } = useTransactionStore()
+
+  function filterExpenses() {
+    const expenseFilter = transactions.filter(item => item.category == "Expenses")
+    console.log(expenseFilter); 
+  }
+  filterExpenses()
+
+  function filterIncome() {
+    const incomeFilter = transactions.filter(item => item.category == "Income")
+    console.log(incomeFilter); 
+    setFilters()
+  }
+  // filterIncome()
 
   return(
     <>
@@ -18,9 +31,9 @@ function TransactionList() {
               <li className=' m-4' key={transaction.id}>
                 <div className="flex justify-between my-2 ">
                   <h1 className='text-xl font-semibold'>{transaction.description}</h1>
-                  <p className={`text-xl font-semibold ${transaction.amount > 0 ? "text-green-600" : "text-red-600"}`}>
+                  <p className={`text-xl font-semibold ${transaction.category == "Expenses" ? "text-red-600" : "text-green-600"}`}>
                          {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(transaction.amount)}
-                          + </p>
+                          {transaction.category == "Expenses" ? "-" : "+"} </p>
                 </div>
                 <p className='text-xl my-2 font-semibold'>{transaction.category}</p>
                 <p className='text-md font-semibold text-[#676f78] '>{transaction.date}</p>
