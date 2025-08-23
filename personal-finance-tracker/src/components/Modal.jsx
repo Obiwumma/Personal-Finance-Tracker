@@ -13,9 +13,9 @@ function Modal({ isOpen, onClose, children }) {
       <div className="bg-white p-6 rounded-lg shadow-lg">
         {children}
 
-        <button className="w-20" onClick={onClose}>CLOSE</button>
 
         <TransactionForm isOpen={isOpen} onClose={onClose} />
+        
 
       </div>
     </div>,

@@ -87,10 +87,14 @@ function TransactionForm({ onClose}) {
       </div>
 
 
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded"  >
+          <div className="flex justify-between">
+            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded"  >
             SUBMIT
           </button>
+          <button className="bg-red-500 text-white px-4 py-2 rounded" onClick={onClose}>CLOSE</button>
+          </div>
         </form>
+        
       </div>
     </>
   )
