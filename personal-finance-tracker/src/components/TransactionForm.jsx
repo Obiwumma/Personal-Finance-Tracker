@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 import { useTransactionStore } from "../store/transactionStore";
 
-function TransactionForm() {
+function TransactionForm({ onClose}) {
 
       const { register, handleSubmit, formState: { errors }, reset } = useForm();
       const addTransaction = useTransactionStore((state) => state.addTransaction)
@@ -13,6 +13,7 @@ function TransactionForm() {
 
   const onHandleSubmit = (data) => {
         console.log(data)
+        onClose()
         addTransaction({
       ...data,
       id: Date.now(), 
@@ -86,7 +87,7 @@ function TransactionForm() {
       </div>
 
 
-          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded" >
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded"  >
             SUBMIT
           </button>
         </form>

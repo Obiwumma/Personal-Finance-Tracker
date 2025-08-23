@@ -15,7 +15,7 @@ function Modal({ isOpen, onClose, children }) {
 
         <button className="w-20" onClick={onClose}>CLOSE</button>
 
-        <TransactionForm/>
+        <TransactionForm isOpen={isOpen} onClose={onClose} />
 
       </div>
     </div>,
