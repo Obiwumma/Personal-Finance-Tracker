@@ -5,8 +5,8 @@ import { useTransactionStore } from "../store/transactionStore";
 
 function TransactionForm({ onClose}) {
 
-      const { register, handleSubmit, formState: { errors }, reset } = useForm();
-      const addTransaction = useTransactionStore((state) => state.addTransaction)
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const addTransaction = useTransactionStore((state) => state.addTransaction)
 
 
 

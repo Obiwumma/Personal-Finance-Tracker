@@ -1,21 +1,18 @@
+import { useMemo } from "react";
 import { useTransactionStore } from "../store/transactionStore";
 
 function TransactionList() {
-  const transactions = useTransactionStore((state) => state.transactions)
-  const { filteredTransactions } = useTransactionStore()
 
-  function filterExpenses() {
-    const expenseFilter = transactions.filter(item => item.category == "Expenses")
-    console.log(expenseFilter); 
-  }
-  filterExpenses()
+  const {  filterCategory, transactions } = useTransactionStore();
+  
 
-  function filterIncome() {
-    const incomeFilter = transactions.filter(item => item.category == "Income")
-    console.log(incomeFilter); 
-    setFilters()
-  }
-  // filterIncome()
+  const filteredTransactions = useMemo(() => {
+      if (filterCategory === "all") {
+        return transactions;
+      }
+      return transactions.filter((item) => item.category === filterCategory);
+    }, [transactions, filterCategory]); // Only re-run if these change
+
 
   return(
     <>
@@ -27,7 +24,7 @@ function TransactionList() {
           
           <div>
             <ul>
-              {transactions.map(transaction => (
+              {filteredTransactions.map(transaction => (
               <li className=' m-4' key={transaction.id}>
                 <div className="flex justify-between my-2 ">
                   <h1 className='text-xl font-semibold'>{transaction.description}</h1>

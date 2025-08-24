@@ -5,10 +5,11 @@ import './App.css'
 
 
 
-import Category from './components/Category'
+import Category from './components/category'
 import ThemeIcons from './components/ThemeIcon'
 import Modal from './components/Modal'
 import TransactionList from './components/List'
+import { useTransactionStore } from './store/transactionStore'
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,11 +34,11 @@ function App() {
       </header>
 
       <div className='flex items-center justify-center'>
-        <Category/> 
+        <Category /> 
       </div>
 
       <main>
-        <TransactionList/>
+        <TransactionList />
       </main>
 
       <button className='bg-green-600 hover:bg-green-700 h-16 w-16 fixed bottom-6 right-6 rounded-full flex items-center justify-center text-5xl text-white shadow-lg transition' onClick={() => setIsOpen(true)} > + </button>
