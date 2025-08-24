@@ -32,14 +32,12 @@ function TransactionList() {
                          {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(transaction.amount)}
                           {transaction.category == "Expenses" ? "-" : "+"} </p>
                 </div>
-                <div>
+                <div className="flex justify-between items-center">
                   <div>
                     <p className='text-xl my-2 font-semibold'>{transaction.category}</p>
                     <p className='text-md font-semibold text-[#676f78] '>{transaction.date}</p>
                   </div>
-                  <button>
-                    {/* <FontAwesomeIcon icon={faTrash} /> */}
-                  </button>
+                   <button className="bg-red-500  text-white font-semibold px-4 h-10 rounded" onClick={() => deleteTransaction(transaction.id)}>Delete</button>
                 </div>
                 <hr />
               </li>
