@@ -3,7 +3,7 @@ import { useTransactionStore } from "../store/transactionStore";
 
 function TransactionList() {
 
-  const {  filterCategory, transactions } = useTransactionStore();
+  const { deleteTransaction, filterCategory, transactions } = useTransactionStore();
   
 
   const filteredTransactions = useMemo(() => {
@@ -32,8 +32,13 @@ function TransactionList() {
                          {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(transaction.amount)}
                           {transaction.category == "Expenses" ? "-" : "+"} </p>
                 </div>
-                <p className='text-xl my-2 font-semibold'>{transaction.category}</p>
-                <p className='text-md font-semibold text-[#676f78] '>{transaction.date}</p>
+                <div>
+                  <div>
+                    <p className='text-xl my-2 font-semibold'>{transaction.category}</p>
+                    <p className='text-md font-semibold text-[#676f78] '>{transaction.date}</p>
+                  </div>
+                  <button></button>
+                </div>
                 <hr />
               </li>
               
