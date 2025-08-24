@@ -37,7 +37,9 @@ function TransactionList() {
                     <p className='text-xl my-2 font-semibold'>{transaction.category}</p>
                     <p className='text-md font-semibold text-[#676f78] '>{transaction.date}</p>
                   </div>
-                  <button></button>
+                  <button>
+                    {/* <FontAwesomeIcon icon={faTrash} /> */}
+                  </button>
                 </div>
                 <hr />
               </li>
