@@ -1,5 +1,6 @@
 import { useTransactionStore } from "../store/transactionStore";
 import { useMemo } from "react";
+import { Link } from "react-router-dom";
 
 function StatHeader() {
   const {transactions} = useTransactionStore();
@@ -11,7 +12,6 @@ function StatHeader() {
 
     const balance = totalIncome - totalExpense
 
-    console.log(totalIncome, totalExpense, balance)
 
     return { totalIncome, totalExpense, balance }
 
@@ -30,7 +30,7 @@ function StatHeader() {
             <p className='text-2xl font-semibold text-gray-800 '>{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(totalIncome)}</p>
             <p className='text-2xl font-semibold text-gray-800 '>{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(totalExpense)}</p>
           </div>
-          <a href="">View Stats</a>
+          <Link to='/stats'>View Stats</Link>
         </div>
     </>
   )

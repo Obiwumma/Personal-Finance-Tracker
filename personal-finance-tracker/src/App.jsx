@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter } from 'react'
+import { BrowserRouter, Routes, Route, } from 'react-router-dom'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -7,50 +7,34 @@ import './App.css'
 
 
 
-// import { transactions } from './data/transactions'
 
 
-
-import Category from './components/category'
-import ThemeIcons from './components/ThemeIcon'
-import Modal from './components/Modal'
-import TransactionList from './components/List'
+import Layout from './components/Layout';
+import Statistics from './components/Statistics';
 import StatHeader from './components/StatHeader';
-import { useTransactionStore } from './store/transactionStore'
+import ThemeIcons from './components/ThemeIcon';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false)
-
-  
-
-  function closeModal() {
-    setIsOpen(false)
-  }
+ 
 
   return (
-    <BrowserRouter>
-    <Modal isOpen={isOpen} onClose={closeModal} />
     <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg '>
-      
-      <header className='flex items-start justify-between'>
-       
-       <StatHeader/>
+      <BrowserRouter >
+       <header className='flex items-start justify-between'>
+            
+        <StatHeader/>
 
         <ThemeIcons/>
       </header>
-
-      <div className='flex items-center justify-center'>
-        <Category /> 
-      </div>
-
-      <main>
-        <TransactionList />
-      </main>
-
-      <button className='bg-green-600 hover:bg-green-700 h-16 w-16 fixed bottom-6 right-6 rounded-full flex items-center justify-center text-5xl text-white shadow-lg transition' onClick={() => setIsOpen(true)} > + </button>
-
+        <Routes>
+          <Route path='/' element={<Layout />}  />
+          <Route path='stats' element={<Statistics/>}  />
+          <Route path='*' element={<PageNotFound/>}  />
+          
+        </Routes>
+      </BrowserRouter>
     </div>
-    </BrowserRouter>
   )
 }
 
