@@ -13,6 +13,7 @@ import Category from './components/category'
 import ThemeIcons from './components/ThemeIcon'
 import Modal from './components/Modal'
 import TransactionList from './components/List'
+import StatHeader from './components/StatHeader';
 import { useTransactionStore } from './store/transactionStore'
 
 function App() {
@@ -28,11 +29,10 @@ function App() {
     <>
     <Modal isOpen={isOpen} onClose={closeModal} />
     <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg '>
+      
       <header className='flex items-start justify-between'>
-        <div>
-          <h1 className='font-bold text-3xl text-gray-800'>Finance Tracker</h1>
-          <div className='my-4'><p className='text-2xl font-semibold text-gray-800 '>$2,000.00</p></div>
-        </div>
+       
+       <StatHeader/>
 
         <ThemeIcons/>
       </header>
