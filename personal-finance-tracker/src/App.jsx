@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter } from 'react'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import './App.css'
+
 
 
 // import { transactions } from './data/transactions'
@@ -26,7 +28,7 @@ function App() {
   }
 
   return (
-    <>
+    <BrowserRouter>
     <Modal isOpen={isOpen} onClose={closeModal} />
     <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg '>
       
@@ -48,7 +50,7 @@ function App() {
       <button className='bg-green-600 hover:bg-green-700 h-16 w-16 fixed bottom-6 right-6 rounded-full flex items-center justify-center text-5xl text-white shadow-lg transition' onClick={() => setIsOpen(true)} > + </button>
 
     </div>
-    </>
+    </BrowserRouter>
   )
 }
 
