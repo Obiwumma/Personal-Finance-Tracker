@@ -5,9 +5,8 @@ import { Pie, PieChart, ResponsiveContainer, Cell, Tooltip } from 'recharts';
 import { useTransactionStore } from '../store/transactionStore';
 
 function PieChartStat() {
-const {transactions} = useTransactionStore();
+  const {transactions} = useTransactionStore();
   
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   const calculations =  useMemo( () => {
     const totalExpense = transactions.filter(transaction => transaction.category == "Expenses" ).reduce((ExpenseSum, transaction) =>  ExpenseSum + Number(transaction.amount), 0 )
@@ -21,7 +20,7 @@ const {transactions} = useTransactionStore();
 
   }, [transactions])
 
-  const { totalIncome, totalExpense, balance } = calculations
+  const { totalIncome, totalExpense } = calculations
 
 const pieData = [
   { name: "Income", value: totalIncome },
