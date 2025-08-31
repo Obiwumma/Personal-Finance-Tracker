@@ -1,0 +1,74 @@
+import React from 'react'
+import { useMemo } from 'react';
+import { Pie, PieChart, ResponsiveContainer, Cell, Tooltip } from 'recharts';
+
+import { useTransactionStore } from '../store/transactionStore';
+
+function PieChartStat() {
+const {transactions} = useTransactionStore();
+  
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  const calculations =  useMemo( () => {
+    const totalExpense = transactions.filter(transaction => transaction.category == "Expenses" ).reduce((ExpenseSum, transaction) =>  ExpenseSum + Number(transaction.amount), 0 )
+
+    const totalIncome = transactions.filter(transaction => transaction.category == "Income" ).reduce((IncomeSum, transaction) =>  IncomeSum + Number(transaction.amount), 0 )
+
+    const balance = totalIncome - totalExpense
+
+
+    return { totalIncome, totalExpense, balance }
+
+  }, [transactions])
+
+  const { totalIncome, totalExpense, balance } = calculations
+
+const pieData = [
+  { name: "Income", value: totalIncome },
+  { name: "Expenses", value: totalExpense },
+];
+
+const COLORS = ["#82ca9d", "#ff6b6b"];
+
+// const data02 = [
+//   { name: 'Group A', value: 2400 },
+//   { name: 'Group B', value: 4567 },
+//   { name: 'Group C', value: 1398 },
+//   { name: 'Group D', value: 9800 },
+//   { name: 'Group E', value: 3908 },
+//   { name: 'Group F', value: 4800 },
+// ];
+  return (
+    <div style={{ width: "100%", height: 400 }}>
+      <ResponsiveContainer width="100%" height="100%">
+      <PieChart width={400} height={400}>
+        {/* <Pie
+          dataKey="value"
+          isAnimationActive={false}
+          data={data01}
+          cx="50%"
+          cy="50%"
+          outerRadius={80}
+          fill="#8884d8"
+          label
+        /> */}
+        <Pie
+          data={pieData}
+          cx="50%"   // center X
+          cy="50%"   // center Y
+          innerRadius={60}
+          outerRadius={100}
+          dataKey="value"
+        >
+          {pieData.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip />
+      </PieChart>
+    </ResponsiveContainer>
+      </div>
+  )
+}
+
+export default PieChartStat

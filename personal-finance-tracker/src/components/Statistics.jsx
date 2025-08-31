@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 
 import { useTransactionStore } from '../store/transactionStore'; 
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell, Pie, PieChart, ResponsiveContainer } from 'recharts';
+import PieChartStat from './PieChartStat';
 
 function Statistics() {
   const {transactions} = useTransactionStore();
@@ -47,29 +48,33 @@ function Statistics() {
   
     const { totalIncome, totalExpense, balance } = calculations
   return (
-    <div style={{ width: "100%", height: 400 }}>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          width={500}
-          height={300}
-          data={monthlyData}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="income" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-          <Bar dataKey="expense" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
-          <Bar dataKey="balance" fill="#3b438dff" activeBar={<Rectangle fill="gold" stroke="purple" />} />
-        </BarChart>
-      </ResponsiveContainer>
+    <div>
+      <div style={{ width: "100%", height: 400 }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            width={500}
+            height={300}
+            data={monthlyData}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="income" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
+            <Bar dataKey="expense" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+            <Bar dataKey="balance" fill="#3b438dff" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      <PieChartStat/>
     </div>
   )
 }
