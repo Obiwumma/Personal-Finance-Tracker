@@ -29,29 +29,24 @@ const pieData = [
 
 const COLORS = ["#82ca9d", "#ff6b6b"];
 
-// const data02 = [
-//   { name: 'Group A', value: 2400 },
-//   { name: 'Group B', value: 4567 },
-//   { name: 'Group C', value: 1398 },
-//   { name: 'Group D', value: 9800 },
-//   { name: 'Group E', value: 3908 },
-//   { name: 'Group F', value: 4800 },
-// ];
   return (
     <div style={{ width: "100%", height: 400 }}>
       <ResponsiveContainer width="100%" height="100%">
       <PieChart width={400} height={400}>
-        {/* <Pie
+          <Pie
           dataKey="value"
           isAnimationActive={false}
-          data={data01}
+          data={pieData}
           cx="50%"
           cy="50%"
           outerRadius={80}
-          fill="#8884d8"
           label
-        /> */}
-        <Pie
+        >
+          {pieData.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        {/* <Pie
           data={pieData}
           cx="50%"   // center X
           cy="50%"   // center Y
@@ -62,7 +57,7 @@ const COLORS = ["#82ca9d", "#ff6b6b"];
           {pieData.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
-        </Pie>
+        </Pie> */}
         <Tooltip />
       </PieChart>
     </ResponsiveContainer>
