@@ -56,7 +56,7 @@ function BarChartStat() {
             <Legend />
             <Bar dataKey="income" fill="#4abc7dff" activeBar={<Rectangle fill="green" stroke="" />} />
             <Bar dataKey="expense" fill="#ec2020ff" activeBar={<Rectangle fill="red" stroke="" />} />
-            <Bar dataKey="balance" fill="#3b438dff" activeBar={<Rectangle fill="blue" stroke="" />} />
+            <Bar dataKey="balance" fill="#2a3cdfff" activeBar={<Rectangle fill="blue" stroke="" />} />
           </BarChart>
         </ResponsiveContainer>
       </div>
