@@ -21,11 +21,11 @@ function App() {
   return (
     <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg '>
       <BrowserRouter >
-       <header className='flex items-start justify-between'>
+       <header >
             
         <StatHeader/>
 
-        <ThemeIcons/>
+        {/* <ThemeIcons/> */}
       </header>
         <Routes>
           <Route path='/' element={<Layout />}  />

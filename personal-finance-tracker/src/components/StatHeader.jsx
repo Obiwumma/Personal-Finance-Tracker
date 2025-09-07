@@ -10,6 +10,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 library.add(fas, far, fab)
 
+import ThemeIcons from './ThemeIcon';
+
+
 function StatHeader() {
   const {transactions} = useTransactionStore();
 
@@ -29,10 +32,11 @@ function StatHeader() {
   
   return(
     <>
-       <div >
+       <header className='flex items-start justify-between'>
+        <div>   
           <h1 className='font-bold text-3xl text-gray-800'>Finance Tracker</h1>
-          <div className='my-4'>
-            <p className='text-2xl font-semibold text-gray-800 '>Balance: {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(balance)}</p>
+          <div className='my-4 lg:hidden'>
+            <p className='text-3xl font-semibold text-gray-800 '>Balance: {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(balance)}</p>
           </div>
           <div className='my-4'>
             
@@ -41,6 +45,14 @@ function StatHeader() {
           </div>
           <Link to='/stats'><button className="border py-2 px-3 rounded-full">View Stats</button></Link>
         </div>
+
+        <div className=' max-lg:hidden text-center text-gray-800'>
+          <p className="font-semibold text-xl">Balance</p>
+          <p className='text-3xl font-semibold  '> {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(balance)}</p>
+        </div>
+
+        <ThemeIcons/>
+       </header>
     </>
   )
 }
