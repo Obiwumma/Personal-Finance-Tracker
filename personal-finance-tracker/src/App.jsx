@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, } from 'react-router-dom'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import './App.css'
+
 
 
 
