@@ -29,17 +29,17 @@ function StatHeader() {
   
   return(
     <>
-       <div>
+       <div >
           <h1 className='font-bold text-3xl text-gray-800'>Finance Tracker</h1>
           <div className='my-4'>
-            <p className='text-2xl font-semibold text-gray-800 '>{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(balance)}</p>
+            <p className='text-2xl font-semibold text-gray-800 '>Balance: {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(balance)}</p>
           </div>
           <div className='my-4'>
             
-            <p className='text-2xl font-semibold text-gray-800 '>{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(totalIncome)}</p>
-            <p className='text-2xl font-semibold text-gray-800 '>{new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(totalExpense)}</p>
+            <p className='text-2xl font-semibold text-gray-800 '>Total Income: {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(totalIncome)}</p>
+            <p className='text-2xl font-semibold text-gray-800 '>Total Expense: {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(totalExpense)}</p>
           </div>
-          <Link to='/stats'>View Stats</Link>
+          <Link to='/stats'><button className="border py-2 px-3 rounded-full">View Stats</button></Link>
         </div>
     </>
   )

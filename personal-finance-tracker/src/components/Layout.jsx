@@ -2,8 +2,6 @@ import React from 'react'
 import { useState } from 'react'
 
 import Modal from './Modal'
-import StatHeader from './StatHeader'
-import ThemeIcons from './ThemeIcon'
 import Category from './category'
 import TransactionList from './List'
 
