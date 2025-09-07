@@ -10,7 +10,7 @@ function Statistics() {
     <div>  
       <header className='flex justify-end mb-10'>
         <Link to='/'>
-        <button className=' border py-1 px-5 rounded-full'>Back</button></Link>
+        <button className=' border py-1 px-5 rounded-full font-semibold hover:bg-gray-200'>Back</button></Link>
       </header>
       <div className='grid lg:grid-cols-2  gap-5'>
         <BarChartStat/>

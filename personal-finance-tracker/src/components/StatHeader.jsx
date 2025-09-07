@@ -43,7 +43,7 @@ function StatHeader() {
             <p className='text-2xl font-semibold text-gray-800 '>Total Income: {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(totalIncome)}</p>
             <p className='text-2xl font-semibold text-gray-800 '>Total Expense: {new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(totalExpense)}</p>
           </div>
-          <Link to='/stats'><button className="border py-2 px-3 rounded-full">View Stats</button></Link>
+          <Link to='/stats'><button className="border py-2 px-3 rounded-full font-semibold hover:bg-gray-200 ">View Stats</button></Link>
         </div>
 
         <div className=' max-lg:hidden text-center text-gray-800'>
