@@ -1,6 +1,15 @@
 import { useMemo } from "react";
 import { useTransactionStore } from "../store/transactionStore";
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+/* import all the icons in Free Solid, Free Regular, and Brands styles */
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fas, far, fab)
+
 function TransactionList() {
 
   const { deleteTransaction, filterCategory, transactions } = useTransactionStore();
@@ -37,7 +46,8 @@ function TransactionList() {
                     <p className='text-xl my-2 font-semibold'>{transaction.category}</p>
                     <p className='text-md font-semibold text-[#676f78] '>{transaction.date}</p>
                   </div>
-                   <button className="bg-red-500  text-white font-semibold px-4 h-10 rounded" onClick={() => deleteTransaction(transaction.id)}>Delete</button>
+                   <button className="font-semibold px-4 text-gray-800" onClick={() => deleteTransaction(transaction.id)}><FontAwesomeIcon icon="fa-solid fa-trash" size="lg"/></button>
+                   
                 </div>
                 <hr />
               </li>
