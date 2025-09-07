@@ -12,7 +12,7 @@ function Statistics() {
         <Link to='/'>
         <button className=' border py-1 px-5 rounded-full'>Back</button></Link>
       </header>
-      <div className='grid lg:grid-cols-2'>
+      <div className='grid lg:grid-cols-2  gap-5'>
         <BarChartStat/>
         <PieChartStat/>
       </div>

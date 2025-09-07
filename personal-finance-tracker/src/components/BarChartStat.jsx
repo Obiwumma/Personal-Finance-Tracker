@@ -7,7 +7,7 @@ import { useTransactionStore } from '../store/transactionStore';
 
 function BarChartStat() {
   const {transactions} = useTransactionStore();
-    
+  
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   
     const monthlyData = useMemo(() => {
@@ -35,6 +35,7 @@ function BarChartStat() {
 
   return (
     <div>
+      <h1 className='font-semibold text-2xl text-gray-800'>Monthly Income and Expenses</h1>
       <div style={{ width: "100%", height: 400 }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
@@ -53,9 +54,9 @@ function BarChartStat() {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="income" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-            <Bar dataKey="expense" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
-            <Bar dataKey="balance" fill="#3b438dff" activeBar={<Rectangle fill="gold" stroke="purple" />} />
+            <Bar dataKey="income" fill="#4abc7dff" activeBar={<Rectangle fill="green" stroke="" />} />
+            <Bar dataKey="expense" fill="#ec2020ff" activeBar={<Rectangle fill="red" stroke="" />} />
+            <Bar dataKey="balance" fill="#3b438dff" activeBar={<Rectangle fill="blue" stroke="" />} />
           </BarChart>
         </ResponsiveContainer>
       </div>
