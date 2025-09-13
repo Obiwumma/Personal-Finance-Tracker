@@ -3,24 +3,23 @@ import { createContext, useState, useEffect } from "react";
 export const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => {
-    const savedMode = localStorage.getItem("dark-mode");
-    return savedMode === "true"; // default: false if nothing saved
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("dark-mode") === "true";
   });
-//https://www.youtube.com/watch?v=drWn3MP9bmU
-  // Effect: update localStorage + body class whenever theme changes
-  useEffect(() => {
-    localStorage.setItem("dark-mode", theme);
-    document.body.className = theme ? "dark-mode" : "";
-  }, [theme]);
 
-  // Toggle between true/false
-  const toggleTheme = () => {
-    setTheme((prevTheme) => !prevTheme);
-  };
+  useEffect(() => {
+    localStorage.setItem("dark-mode", darkMode);
+    if (darkMode) {
+      document.documentElement.classList.add("dark");  // html gets dark mode
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
+
+  const toggleTheme = () => setDarkMode((prev) => !prev);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
