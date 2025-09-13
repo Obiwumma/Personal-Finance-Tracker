@@ -19,9 +19,9 @@ function App() {
  
 
   return (
-    <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg '>
+    <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg dark:bg-black dark:text-white '>
       <BrowserRouter >
-       <header className='dark:bg-black'>
+       <header className=''>
             
         <StatHeader/>
 

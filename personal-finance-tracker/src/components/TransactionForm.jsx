@@ -88,8 +88,8 @@ function TransactionForm({ onClose}) {
 
 
           <div className="flex justify-between">
-            <button className="bg-red-500 text-white px-4 py-2 rounded" onClick={onClose}>CLOSE</button>
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded"  >
+            <button className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded" onClick={onClose}>CLOSE</button>
+            <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded"  >
             SUBMIT
           </button>
           </div>

@@ -10,7 +10,7 @@ function Modal({ isOpen, onClose, children }) {
 
   return createPortal(
     <div className="fixed inset-0 flex items-center justify-center bg-black/50">
-      <div className="bg-white p-6 rounded-lg shadow-lg">
+      <div className="bg-white dark:bg-black dark:text-white p-6 rounded-lg shadow-lg">
         {children}
 
 

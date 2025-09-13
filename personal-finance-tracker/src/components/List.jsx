@@ -29,7 +29,7 @@ function TransactionList() {
     <div className='text-2xl font-semibold my-4'>Transaction</div>
       {transactions.length === 0 ? <h1 className="uppercase text-4xl text-center">No new transaction</h1> :
       
-        <div className='bg-white border rounded-lg shadow-md'>
+        <div className='bg-white border rounded-lg shadow-md dark:bg-black'>
           
           <div>
             <ul>
@@ -46,7 +46,7 @@ function TransactionList() {
                     <p className='text-xl my-2 font-semibold'>{transaction.category}</p>
                     <p className='text-md font-semibold text-[#676f78] '>{transaction.date}</p>
                   </div>
-                   <button className="font-semibold px-4 text-gray-800" onClick={() => deleteTransaction(transaction.id)}><FontAwesomeIcon icon="fa-solid fa-trash" size="lg"/></button>
+                   <button className="font-semibold px-4 text-gray-800 dark:text-white/70" onClick={() => deleteTransaction(transaction.id)}><FontAwesomeIcon icon="fa-solid fa-trash" size="lg"/></button>
                    
                 </div>
                 <hr />

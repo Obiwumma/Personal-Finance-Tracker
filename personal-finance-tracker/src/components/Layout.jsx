@@ -27,7 +27,7 @@ function Layout() {
     
       <div>
           <Modal isOpen={isOpen} onClose={closeModal} />
-          <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg '>
+          <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg dark:bg-gray-900'>
             
            
 
@@ -39,7 +39,7 @@ function Layout() {
               <TransactionList />
             </main>
 
-            <button className='bg-green-600 hover:bg-green-700 fixed bottom-6 right-6 rounded-full flex items-center justify-center text-4xl text-white h-15 w-15 shadow-lg transition' onClick={() => setIsOpen(true)} >
+            <button className='bg-gray-800 hover:bg-gray-950 fixed bottom-6 right-6 rounded-full flex items-center justify-center text-4xl text-white h-15 w-15 shadow-lg transition' onClick={() => setIsOpen(true)} >
               <FontAwesomeIcon icon="fa-solid fa-plus" />
             </button>
 

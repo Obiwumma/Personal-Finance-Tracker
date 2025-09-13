@@ -6,10 +6,10 @@ function Category() {
   
 
   return <>
-    <div className="flex gap-4 bg-[#ffffff] border rounded-lg p-2 sm:w-[65%] overflow-auto lg:w-[40%] items-center justify-evenly ">
-        <button className={`category-btn ${filterCategory == "all" ? "bg-gray-800 text-white " : "bg-[#eeeeee] hover:bg-gray-300"}` } onClick={() => setFilterCategory("all")}>All</button>
-        <button className={`category-btn ${filterCategory == "Expenses" ? "bg-gray-800 text-white " : "bg-[#eeeeee] hover:bg-gray-300"}` } onClick={() => setFilterCategory("Expenses")}>Expenses</button>
-        <button className={`category-btn ${filterCategory == "Income" ? "bg-gray-800 text-white " : "bg-[#eeeeee] hover:bg-gray-300"}` } onClick={() => setFilterCategory("Income")}>Income</button>
+    <div className="flex gap-4 bg-[#ffffff] border rounded-lg p-2 sm:w-[65%] overflow-auto lg:w-[40%] items-center justify-evenly dark:bg-black ">
+        <button className={`category-btn ${filterCategory == "all" ? "bg-gray-800 dark:hover:bg-gray-900 text-white " : "bg-[#eeeeee] dark:bg-gray-500/40 dark:hover:bg-gray-900 hover:bg-gray-300"}` } onClick={() => setFilterCategory("all")}>All</button>
+        <button className={`category-btn ${filterCategory == "Expenses" ? "bg-gray-800 dark:hover:bg-gray-900 text-white " : "bg-[#eeeeee] dark:bg-gray-500/40 dark:hover:bg-gray-900 hover:bg-gray-300"}` } onClick={() => setFilterCategory("Expenses")}>Expenses</button>
+        <button className={`category-btn ${filterCategory == "Income" ? "bg-gray-800 dark:hover:bg-gray-900 text-white " : "bg-[#eeeeee] dark:bg-gray-500/40 dark:hover:bg-gray-900 hover:bg-gray-300"}` } onClick={() => setFilterCategory("Income")}>Income</button>
       </div>
   </>
 }
