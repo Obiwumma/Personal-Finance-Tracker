@@ -30,7 +30,7 @@ const COLORS = ["#4abc7dff", "#ec2020ff"];
 
   return (
     <div>
-      <h1 className='font-semibold text-2xl text-gray-800'>Your Financial Summary </h1>
+      <h1 className='font-semibold text-2xl text-gray-800 dark:text-white'>Your Financial Summary </h1>
       <div style={{ width: "100%", height: 400 }}>
         <ResponsiveContainer width="100%" height="100%">
         <PieChart width={400} height={400}>
