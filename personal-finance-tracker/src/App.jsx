@@ -21,7 +21,7 @@ function App() {
   return (
     <div className='m-4 p-6 bg-gray-50 min-h-screen font-sans rounded-lg '>
       <BrowserRouter >
-       <header className='dark:bg-gray-800'>
+       <header className='dark:bg-black'>
             
         <StatHeader/>
 
