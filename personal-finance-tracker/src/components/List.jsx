@@ -27,7 +27,7 @@ function TransactionList() {
     <>
 
     <div className='text-2xl font-semibold my-4'>Transaction</div>
-      {transactions.length === 0 ? <h1 className="uppercase text-4xl text-center">No new transaction</h1> :
+      {transactions.length === 0 ? <h1 className="uppercase text-2xl md:text-4xl text-center">No new transaction</h1> :
       
         <div className='bg-white border rounded-lg shadow-md dark:bg-black'>
           
